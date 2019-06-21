@@ -2,10 +2,10 @@ import React from "react";
 
 const Smurf = ({ smurf }) => {
   return (
-    <div>
+    <div className="smurf">
       <h3>{smurf.name}</h3>
-      <h3>{`${smurf.age} years old`}</h3>
-      <h3>{`${smurf.height} tall`}</h3>
+      <p>{`${smurf.age} years old`}</p>
+      <p>{`${smurf.height} tall`}</p>
     </div>
   );
 };

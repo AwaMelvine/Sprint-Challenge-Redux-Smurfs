@@ -10,7 +10,14 @@ class SmurfList extends Component {
   render() {
     const { smurfs } = this.props;
     return (
-      <div>
+      <div className="smurf-list">
+        {smurfs.map(smurf => (
+          <Smurf key={smurf.id} smurf={smurf} />
+        ))}
+        {smurfs.map(smurf => (
+          <Smurf key={smurf.id} smurf={smurf} />
+        ))}
+
         {smurfs.map(smurf => (
           <Smurf key={smurf.id} smurf={smurf} />
         ))}
