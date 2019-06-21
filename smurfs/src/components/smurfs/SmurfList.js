@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { fetchSmurfs } from "../../actions";
 import Smurf from "./Smurf";
 
@@ -22,4 +23,7 @@ const mapStateToProps = state => ({
   smurfs: state.smurfs
 });
 
-export default (mapStateToProps, { fetchSmurfs })(SmurfList);
+export default connect(
+  mapStateToProps,
+  { fetchSmurfs }
+)(SmurfList);
