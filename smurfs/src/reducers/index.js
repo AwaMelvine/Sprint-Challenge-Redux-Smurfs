@@ -4,7 +4,8 @@ import {
   FETCH_SUCCESS,
   ADDING,
   ADD_FAILURE,
-  SET_CURRENT_SMURF
+  SET_CURRENT_SMURF,
+  UPDATING
 } from "../actions";
 
 /*
@@ -71,7 +72,14 @@ export default (state = initialState, action) => {
     case SET_CURRENT_SMURF:
       return {
         ...state,
-        currentSmurf: action.payload
+        currentSmurf: action.payload,
+        editing: true
+      };
+    case UPDATING:
+      return {
+        ...state,
+        updatingSmurf: action.payload,
+        editing: action.payload
       };
 
     default:

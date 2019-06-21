@@ -11,6 +11,7 @@ export const DELETING = "DELETING";
 export const ADD_SUCCESS = "ADD_SUCCESS";
 export const ADD_FAILURE = "ADD_FAILURE";
 export const SET_CURRENT_SMURF = "SET_CURRENT_SMURF";
+export const UPDATING = "UPDATING";
 
 const baseUrl = "http://localhost:3333";
 
@@ -43,6 +44,15 @@ export const addSmurf = smurf => dispatch => {
     .then(res => dispatch({ type: FETCH_SUCCESS, payload: res.data }))
     .catch(err => dispatch({ type: ADD_FAILURE, payload: err.message }))
     .finally(() => dispatch({ type: ADDING, payload: false }));
+};
+
+export const updateSmurf = smurf => dispatch => {
+  dispatch({ type: UPDATING, payload: true });
+  axios
+    .put(`${baseUrl}/smurfs/${smurf.id}`, smurf)
+    .then(res => dispatch({ type: FETCH_SUCCESS, payload: res.data }))
+    .catch(err => dispatch({ type: ADD_FAILURE, payload: err.message }))
+    .finally(() => dispatch({ type: UPDATING, payload: false }));
 };
 export const deleteSmurf = id => dispatch => {
   dispatch({ type: DELETING, payload: true });
