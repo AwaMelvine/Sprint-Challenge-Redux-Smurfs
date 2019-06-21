@@ -10,10 +10,13 @@ class SmurfList extends Component {
   render() {
     const { smurfs } = this.props;
     return (
-      <div className="smurf-list">
-        {smurfs.map(smurf => (
-          <Smurf key={smurf.id} smurf={smurf} />
-        ))}
+      <div>
+        <h3 className="center-text">Smurf Village </h3>
+        <div className="smurf-list">
+          {smurfs.map(smurf => (
+            <Smurf key={smurf.id} smurf={smurf} />
+          ))}
+        </div>
       </div>
     );
   }
