@@ -1,3 +1,4 @@
+import axios from "axios";
 /* 
   Action Types Go Here!
   Be sure to export each action type so you can pull it into your reducer
@@ -9,6 +10,8 @@ export const ADDING = "ADDING";
 export const ADD_SUCCESS = "ADD_SUCCESS";
 export const ADD_FAILURE = "ADD_FAILURE";
 
+const baseUrl = "http://localhost:3333";
+
 /*
   For this project you'll need at least 2 action creators for the main portion,
    and 2 more for the stretch problem.
@@ -19,3 +22,11 @@ export const ADD_FAILURE = "ADD_FAILURE";
    U - updateSmurf
    D - deleteSmurf
 */
+
+export const fetchSmurfs = () => dispatch => {
+  axios
+    .get(`${baseUrl}/smurfs`)
+    .then(res => dispatch({ type: FETCH_SUCCESS, payload: res.data }))
+    .catch(err => dispatch({ type: FETCH_FAIULRE, payload: err.message }))
+    .finally(() => dispatch({ type: FETCHING, payload: false }));
+};
