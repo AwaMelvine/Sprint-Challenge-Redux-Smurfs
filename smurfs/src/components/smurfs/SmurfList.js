@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { fetchSmurfs } from "../../actions";
+import Smurf from "./Smurf";
 
 class SmurfList extends Component {
   componentDidMount() {
