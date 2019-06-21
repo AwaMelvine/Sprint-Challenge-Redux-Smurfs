@@ -10,6 +10,7 @@ export const ADDING = "ADDING";
 export const DELETING = "DELETING";
 export const ADD_SUCCESS = "ADD_SUCCESS";
 export const ADD_FAILURE = "ADD_FAILURE";
+export const SET_CURRENT_SMURF = "SET_CURRENT_SMURF";
 
 const baseUrl = "http://localhost:3333";
 
@@ -23,6 +24,8 @@ const baseUrl = "http://localhost:3333";
    U - updateSmurf
    D - deleteSmurf
 */
+
+export const setCurrentSmurf = id => ({ type: SET_CURRENT_SMURF, payload: id });
 
 export const fetchSmurfs = () => dispatch => {
   dispatch({ type: FETCHING, payload: true });

@@ -3,7 +3,8 @@ import {
   FETCH_FAIULRE,
   FETCH_SUCCESS,
   ADDING,
-  ADD_FAILURE
+  ADD_FAILURE,
+  SET_CURRENT_SMURF
 } from "../actions";
 
 /*
@@ -28,7 +29,8 @@ const initialState = {
   addingSmurf: false,
   updatingSmurf: false,
   deletingSmurf: false,
-  error: null
+  error: null,
+  currentSmurf: null
 };
 
 /*
@@ -65,6 +67,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         error: action.payload
+      };
+    case SET_CURRENT_SMURF:
+      return {
+        ...state,
+        currentSmurf: action.payload
       };
 
     default:

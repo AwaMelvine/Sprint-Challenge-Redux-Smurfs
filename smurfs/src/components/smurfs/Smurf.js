@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { deleteSmurf } from "../../actions";
+import { deleteSmurf, setCurrentSmurf } from "../../actions";
 
 class Smurf extends Component {
   render() {
@@ -16,7 +16,12 @@ class Smurf extends Component {
         >
           x
         </span>
-        <span className="edit-smurf">edit</span>
+        <span
+          className="edit-smurf"
+          onClick={() => this.props.setCurrentSmurf(smurf.id)}
+        >
+          edit
+        </span>
       </div>
     );
   }
@@ -24,5 +29,5 @@ class Smurf extends Component {
 
 export default connect(
   null,
-  { deleteSmurf }
+  { deleteSmurf, setCurrentSmurf }
 )(Smurf);

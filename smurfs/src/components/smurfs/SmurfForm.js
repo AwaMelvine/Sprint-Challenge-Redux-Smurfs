@@ -3,11 +3,24 @@ import { addSmurf } from "../../actions";
 import { connect } from "react-redux";
 
 class SmurfForm extends Component {
-  state = {
-    name: "",
-    age: "",
-    height: ""
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "",
+      age: "",
+      height: ""
+    };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const smurf = nextProps.smurfs.find(sm => sm.id === nextProps.currentSmurf);
+    this.setState({
+      name: smurf ? smurf.name : "",
+      age: smurf ? smurf.age : "",
+      height: smurf ? smurf.height : ""
+    });
+  }
+
   change = event => this.setState({ [event.target.name]: event.target.value });
 
   submit = event => {
@@ -46,7 +59,13 @@ class SmurfForm extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  smurfs: state.smurfs,
+  currentSmurf: state.currentSmurf
+});
+
 export default connect(
-  null,
+  mapStateToProps,
   { addSmurf }
 )(SmurfForm);
