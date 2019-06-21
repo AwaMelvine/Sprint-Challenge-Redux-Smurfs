@@ -3,7 +3,6 @@ import {
   FETCH_FAIULRE,
   FETCH_SUCCESS,
   ADDING,
-  ADD_SUCCESS,
   ADD_FAILURE
 } from "../actions";
 
