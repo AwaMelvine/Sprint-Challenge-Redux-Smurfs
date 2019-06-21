@@ -27,8 +27,34 @@ h3 {
   -webkit-box-shadow: 10px 10px 5px -10px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 5px -10px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 5px -10px rgba(0, 0, 0, 0.75);
+  position: relative;
+}
+.smurf-list .smurf .delete-smurf,
+.smurf-list .smurf .edit-smurf {
+  display: none;
 }
 
+.smurf-list .smurf:hover .delete-smurf {
+  display: block;
+  color: red;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.smurf-list .smurf:hover .edit-smurf {
+  display: block;
+  color: green;
+  text-decoration: #3e8989;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+.smurf-list .smurf:hover .edit-smurf:hover,
+.smurf-list .smurf:hover .delete-smurf:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 /* Smurf form */
 .smurf-form {
   width: 40%;
