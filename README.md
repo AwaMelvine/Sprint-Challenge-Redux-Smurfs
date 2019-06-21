@@ -23,8 +23,20 @@ In this challenge, you are to build the Smurfs village once again, only this tim
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+An `action` in redux is an object composed of two attributes: a compulsory `type` attribute which a string describing the action, and an optional `payload` attribute which holds the data. An action is a command for a certain change of state to occur.
+
+A `reducer`is a method that takes two arguments: a slice of state and an action object. Depending on the type of the action and the payload, a reducer responds with the appropriate change in that slice of state and then returns the new state.
+
+A `store` in redux is a central repository for the state of the entire application and acts as the single source of truth for the data in the application. The store is refered to as a 'single source of truth' because it holds the data that is used by the entire application at any point in time.
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+Application state is the state of the entire application (which can be the redux state) while component state is the state of the application that is contained and managed at the level of that particular component only. When the state of an a particular component is not likely to directly affect other components, then it is preferrable to use a component state for that particular component. For example, for components managing data in a form or a radiobutton or checkbox, it is better to use a component state while for large data such as blog articles, it is preferrable to use the application state to store it.
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+Redux thunk is a redux middleware that allows you to return a function in action creators instead of an action. It helps to supply such action creators with a `dispatch` function which helps to dispatch other action creators.
 
 ## Project Set Up
 
@@ -80,9 +92,9 @@ return dispatch => {
 ```js
 [
   {
-    name: 'Brainey',
+    name: "Brainey",
     age: 200,
-    height: '5cm',
+    height: "5cm",
     id: 0
   }
 ];
@@ -113,15 +125,15 @@ Example of object created in Smurf DB:
 ```js
 [
   {
-    name: 'Brainey',
+    name: "Brainey",
     age: 200,
-    height: '5cm',
+    height: "5cm",
     id: 0
   },
   {
-    name: 'Sleepy',
+    name: "Sleepy",
     age: 200,
-    height: '5cm',
+    height: "5cm",
     id: 1
   }
 ];
@@ -173,9 +185,9 @@ Example:
 ```js
 output: [
   {
-    name: 'Sleepy',
+    name: "Sleepy",
     age: 200,
-    height: '5cm',
+    height: "5cm",
     id: 1
   }
 ];
