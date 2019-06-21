@@ -14,13 +14,6 @@ class SmurfList extends Component {
         {smurfs.map(smurf => (
           <Smurf key={smurf.id} smurf={smurf} />
         ))}
-        {smurfs.map(smurf => (
-          <Smurf key={smurf.id} smurf={smurf} />
-        ))}
-
-        {smurfs.map(smurf => (
-          <Smurf key={smurf.id} smurf={smurf} />
-        ))}
       </div>
     );
   }

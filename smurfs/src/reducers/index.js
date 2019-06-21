@@ -1,4 +1,11 @@
-import { FETCHING, FETCH_FAIULRE, FETCH_SUCCESS } from "../actions";
+import {
+  FETCHING,
+  FETCH_FAIULRE,
+  FETCH_SUCCESS,
+  ADDING,
+  ADD_SUCCESS,
+  ADD_FAILURE
+} from "../actions";
 
 /*
   Be sure to import in all of the action types from `../actions`
@@ -46,6 +53,16 @@ export default (state = initialState, action) => {
         smurfs: action.payload
       };
     case FETCH_FAIULRE:
+      return {
+        ...state,
+        error: action.payload
+      };
+    case ADDING:
+      return {
+        ...state,
+        addingSmurf: action.payload
+      };
+    case ADD_FAILURE:
       return {
         ...state,
         error: action.payload
