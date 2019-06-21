@@ -49,6 +49,12 @@ class SmurfForm extends Component {
             } else {
               this.submit(event);
             }
+            this.setState({
+              id: "",
+              name: "",
+              age: "",
+              height: ""
+            });
           }}
         >
           {editing ? <h3>Update Smurf</h3> : <h3>Add Smurf</h3>}

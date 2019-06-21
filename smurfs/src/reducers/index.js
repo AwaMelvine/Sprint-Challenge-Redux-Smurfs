@@ -76,6 +76,14 @@ export default (state = initialState, action) => {
         editing: true
       };
     case UPDATING:
+      if (!action.payload) {
+        return {
+          ...state,
+          updatingSmurf: action.payload,
+          editing: action.payload,
+          currentSmurf: null
+        };
+      }
       return {
         ...state,
         updatingSmurf: action.payload,
