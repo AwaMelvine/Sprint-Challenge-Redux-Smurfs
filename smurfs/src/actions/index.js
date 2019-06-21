@@ -30,3 +30,11 @@ export const fetchSmurfs = () => dispatch => {
     .catch(err => dispatch({ type: FETCH_FAIULRE, payload: err.message }))
     .finally(() => dispatch({ type: FETCHING, payload: false }));
 };
+
+export const addSmurf = smurf => dispatch => {
+  axios
+    .post(`${baseUrl}/smurfs`, smurf)
+    .then(res => dispatch({ type: ADD_SUCCESS, payload: res.data }))
+    .catch(err => dispatch({ type: ADD_FAILURE, payload: err.message }))
+    .finally(() => dispatch({ type: ADDING, payload: false }));
+};
