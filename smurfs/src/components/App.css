@@ -1,28 +1,109 @@
-.App {
+* {
+  box-sizing: border-box;
+}
+body {
+  background: rgba(238, 231, 219, 0.356);
+}
+
+h3 {
+  margin: 5px 0px 5px 0px;
+}
+.center-text {
+  text-align: center;
+}
+.smurf-list {
+  width: 40%;
+  margin: 3rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.smurf-list .smurf {
+  width: 235px;
+  padding: 1rem;
+  margin: 10px;
+  background: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 10px 10px 5px -10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 5px -10px rgba(0, 0, 0, 0.75);
+  position: relative;
+}
+.smurf-list .smurf .delete-smurf,
+.smurf-list .smurf .edit-smurf {
+  display: none;
+}
+
+.smurf-list .smurf:hover .delete-smurf {
+  display: block;
+  color: red;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.smurf-list .smurf:hover .edit-smurf {
+  display: block;
+  color: green;
+  text-decoration: #3e8989;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+.smurf-list .smurf:hover .edit-smurf:hover,
+.smurf-list .smurf:hover .delete-smurf:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+/* Smurf form */
+.smurf-form {
+  width: 40%;
+  margin: 3rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.smurf-form form {
+  width: 60%;
+  margin: 0px auto;
+  background: white;
+  padding: 2rem;
+}
+.smurf-form form h3 {
+  margin-bottom: 1rem;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.smurf-form form input,
+.smurf-form form button {
+  display: block;
+  width: 100%;
+}
+.smurf-form form input {
+  margin-bottom: 0.35rem;
+  height: 50px;
+  outline: none;
+  border: 1px solid #dfdfdf;
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: 0.3rem;
+  font-weight: 200;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.smurf-form form button {
+  border: none;
+  cursor: pointer;
+  font-weight: normal;
+  outline: none;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+  line-height: 1em;
+  padding: 1.125rem 2rem;
+  font-size: 1.08em;
+  color: #fff;
+  background: #3e8989;
+  font-weight: 200;
 }
